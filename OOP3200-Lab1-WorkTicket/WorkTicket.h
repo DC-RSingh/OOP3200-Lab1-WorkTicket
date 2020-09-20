@@ -21,13 +21,13 @@ public:
 	 * Initializes all attributes of a WorkTicket object when params are passed.
 	 *
 	 * @param ticketNumber	the ticket number of the work ticket; defaults to 1; must be a whole, positive number.
-	 * @param id	the id of the client issuing the work ticket; defaults to an empty string.
+	 * @param id	the id of the client issuing the work ticket; defaults to a space.
 	 * @param day	the day the ticket was issued; defaults to 1.
 	 * @param month	the month the ticket was issued; defaults to 1.
 	 * @param year	the year the ticket was issued; defaults to 2000.
-	 * @param desc	the description of the issue the client is having; defaults to an empty string.
+	 * @param desc	the description of the issue the client is having; defaults to a space.
 	 */
-	WorkTicket(int ticketNumber = 1, string id = "", int day = 1, int month = 1, int year = 2000, string desc = "");
+	WorkTicket(int ticketNumber = 1, string id = " ", int day = 1, int month = 1, int year = 2000, string desc = " ");
 
 	// Mutators
 	
@@ -70,8 +70,10 @@ public:
 	 * @param month	the month the ticket was issued.
 	 * @param year	the year the ticket was issued.
 	 * @param desc	the description of the issue the client is having.
+	 *
+	 * @return a boolean representing whether the ticket is valid or not.
 	 */
-	void SetWorkTicket(int ticketNumber, string id, int day, int month, int year, string desc);
+	bool SetWorkTicket(int ticketNumber, string id, int day, int month, int year, string desc);
 
 	// Accessors
 
@@ -104,12 +106,6 @@ public:
 	 * @return a string containing the details of the work ticket.
 	 */
 	string ShowWorkTicket();
-
-	/** isValid method
-	 *
-	 * @return a boolean representing whether the ticket is valid or not.
-	 */
-	bool IsValid();
 	
 private:
 	int workTicketNumber;

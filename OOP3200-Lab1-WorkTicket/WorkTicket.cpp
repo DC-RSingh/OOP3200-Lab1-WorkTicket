@@ -26,7 +26,7 @@ void WorkTicket::SetTicketNumber(int ticketNumber)
 		{
 			isValid = false;
 			// Throw an invalid_argument exception
-			throw invalid_argument("Invalid number - Ticket number must be greater than zero.\n\n");
+			throw invalid_argument("Invalid number - Ticket number must be greater than zero.\n");
 		}
 	}
 	catch (const invalid_argument& e)
@@ -39,7 +39,21 @@ void WorkTicket::SetTicketNumber(int ticketNumber)
 // SetClientId method definition
 void WorkTicket::SetClientId(string id)
 {
-	clientId = id;
+	try
+	{
+		if (!id.empty())
+			clientId = id;
+		else
+		{
+			isValid = false;
+			// Throw invalid_argument exception
+			throw invalid_argument("Invalid Client ID - Client ID must be at least one character long.\n");
+		}		
+	}
+	catch (const invalid_argument& e)
+	{
+		cerr << "Invalid argument: " << e.what() << endl;
+	}
 }
 
 // SetDate method definition
@@ -103,18 +117,34 @@ void WorkTicket::SetDate(int day, int month, int year)
 // SetDesc method definition
 void WorkTicket::SetDesc(string desc)
 {
-	issueDescription = desc;
+	try
+	{
+		if (desc != "")
+			issueDescription = desc;
+		else
+		{
+			isValid = false;
+			// Throw invalid_argument exception
+			throw invalid_argument("Invalid Description - Description must be at least one character long.\n");
+		}		
+	}
+	catch (const invalid_argument& e)
+	{
+		cerr << "Invalid argument: " << e.what() << endl;
+	}
 }
 
 // This should actually return a bool
 // SetWorkTicket method definition
-void WorkTicket::SetWorkTicket(int ticketNumber, string id, int day, int month, int year, string desc)
+bool WorkTicket::SetWorkTicket(int ticketNumber, string id, int day, int month, int year, string desc)
 {
 	isValid = true;
 	SetTicketNumber(ticketNumber);
 	SetClientId(id);
 	SetDate(day, month, year);
 	SetDesc(desc);
+
+	return isValid;
 }
 
 // GetTicketNumber method definition
@@ -151,16 +181,6 @@ string WorkTicket::ShowWorkTicket()
 		strOut << "\n\nWork Ticket Number: " << workTicketNumber << "\nClient ID: " << clientId << "\nDate: " << workTicketDay
 			<< "/" << workTicketMonth << "/" << workTicketYear << "\nDescription: " << issueDescription << "\n\n";
 	}
-	else
-	{
-		strOut << "Something went wrong";
-	}
 	
 	return strOut.str();
-}
-
-// isValid method definition
-bool WorkTicket::IsValid()
-{
-	return isValid;
 }
