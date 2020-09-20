@@ -139,7 +139,7 @@ string WorkTicket::ShowWorkTicket()
 	return strOut.str();
 }
 
-bool WorkTicket::GetValidation()
+bool WorkTicket::IsValid()
 {
 	return isValid;
 }

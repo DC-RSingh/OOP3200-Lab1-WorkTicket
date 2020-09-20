@@ -24,7 +24,7 @@ public:
 	int GetDate();
 	string GetDesc();
 	string ShowWorkTicket();
-	bool GetValidation();
+	bool IsValid();
 	
 private:
 	int workTicketNumber;
