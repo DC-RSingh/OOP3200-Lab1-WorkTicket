@@ -1,5 +1,11 @@
-// OOP3200-Lab1-WorkTicket.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+/** main.cpp
+ *
+ *	This program includes a WorkTicket class that:
+ *		- 
+ *
+ *	@authors	Raje Singh & Angus Wai
+ *	@studentIDs 100776793 & 
+*/
 
 #include <iostream>
 
