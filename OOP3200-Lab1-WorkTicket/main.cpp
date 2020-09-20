@@ -1,21 +1,18 @@
 /** main.cpp
  *
- *	This program includes a WorkTicket class that:
- *		- 
- *
  *	@authors	Raje Singh & Angus Wai
  *	@studentIDs 100776793 & 100719558
  *	@date		September 19, 2020
 */
 
 #include <iostream>
-//#include <vector>
+#include <string>
 #include "WorkTicket.h"
+#include "ConsoleInput.h"
 
 int main()
 {
 	const int NUM_OF_TICKETS = 3;
-	//std::vector<WorkTicket> tickets;
 	WorkTicket tickets[NUM_OF_TICKETS];
 	int number;
 	string clientId;
@@ -31,27 +28,30 @@ int main()
 		do
 		{
 			cout << "\nCurrently inputting details for work ticket: " << i + 1 << endl;
+			
 			cout << "\nTicket Number: ";
-			cin >> number;
+			number = ConsoleInput::ReadInteger();
+			
 			cout << "Client ID: ";
-			cin >> clientId;
+			getline(cin, clientId);
+			
 			cout << "Day of the ticket: ";
-			cin >> day;
+			day = ConsoleInput::ReadInteger();
+			
 			cout << "Month of the ticket: ";
-			cin >> month;
+			month = ConsoleInput::ReadInteger();
+			
 			cout << "Year of the ticket: ";
-			cin >> year;
+			year = ConsoleInput::ReadInteger();
+			
 			cout << "Description: ";
-			cin >> desc;
+			getline(cin, desc);
 
-			tickets[i].SetWorkTicket(number, clientId, day, month, year, desc);
-		} while (!tickets[i].IsValid());
+		} while (!tickets[i].SetWorkTicket(number, clientId, day, month, year, desc));
 	}
 
-	for (int i = 0; i < NUM_OF_TICKETS; i++) cout << "\n\n--------------------\n       OUTPUT\n--------------------" << tickets[i].ShowWorkTicket();
-
-	/*WorkTicket test(-1, "44lsa", 19, 9, 2020, "This is a test ticket.");
-	cout << test.ShowWorkTicket();*/
+	for (int i = 0; i < NUM_OF_TICKETS; i++) cout << "\n\n--------------------\n   " << "WORK TICKET #" << i + 1
+		<< "\n--------------------" << tickets[i].ShowWorkTicket();
 
 	return 0;
 }
