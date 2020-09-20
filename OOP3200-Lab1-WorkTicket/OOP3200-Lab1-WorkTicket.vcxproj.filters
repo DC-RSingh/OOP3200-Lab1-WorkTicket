@@ -21,9 +21,15 @@
     <ClCompile Include="WorkTicket.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ConsoleInput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WorkTicket.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleInput.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
