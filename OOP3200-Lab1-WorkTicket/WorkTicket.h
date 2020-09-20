@@ -1,3 +1,13 @@
+/** WorkTicket.h
+ *
+ *	This program includes a WorkTicket class that:
+ *		-
+ *
+ *	@authors	Raje Singh & Angus Wai
+ *	@studentIDs 100776793 & 100719558
+ *	@date		September 19, 2020
+*/
+
 #ifndef WORK_TICKET_H
 #define WORK_TICKET_H
 
@@ -9,7 +19,7 @@ class WorkTicket
 {
 public:
 	// Parameterized constructor
-	WorkTicket(int ticketNumber = 0, string id = "", int day = 1, int month = 1, int year = 2000, string desc = "");
+	WorkTicket(int ticketNumber = 1, string id = "", int day = 1, int month = 1, int year = 2000, string desc = "");
 
 	// Mutators
 	void SetTicketNumber(int ticketNumber);

@@ -1,3 +1,12 @@
+/** WorkTicket.cpp
+ *
+ *	This program includes a WorkTicket class that:
+ *		-
+ *
+ *	@authors	Raje Singh & Angus Wai
+ *	@studentIDs 100776793 & 100719558
+ *	@date		September 19, 2020
+*/
 #include <sstream>
 #include "WorkTicket.h"
 
@@ -19,7 +28,7 @@ void WorkTicket::SetTicketNumber(int ticketNumber)
 		{
 			isValid = false;
 			// Throw an invalid_argument exception
-			throw invalid_argument("Invalid number - Ticket number must be greater than zero.\n");
+			throw invalid_argument("Invalid number - Ticket number must be greater than zero.\n\n");
 		}
 	}
 	catch (const invalid_argument& e)
@@ -45,7 +54,7 @@ void WorkTicket::SetDate(int day, int month, int year)
 				{
 					try
 					{
-						if (year > 2000 && year < 2100)
+						if (year > 1999 && year < 2100)
 						{
 							workTicketDay = day;
 							workTicketMonth = month;
@@ -96,6 +105,7 @@ void WorkTicket::SetDesc(string desc)
 
 void WorkTicket::SetWorkTicket(int ticketNumber, string id, int day, int month, int year, string desc)
 {
+	isValid = true;
 	SetTicketNumber(ticketNumber);
 	SetClientId(id);
 	SetDate(day, month, year);
@@ -128,8 +138,8 @@ string WorkTicket::ShowWorkTicket()
 
 	if (isValid)
 	{
-		strOut << "Work Ticket Number: " << workTicketNumber << "\nClient ID: " << clientId << "\nDate: " << workTicketDay
-			<< "/" << workTicketMonth << "/" << workTicketYear << "\nDescription: " << issueDescription;
+		strOut << "\n\nWork Ticket Number: " << workTicketNumber << "\nClient ID: " << clientId << "\nDate: " << workTicketDay
+			<< "/" << workTicketMonth << "/" << workTicketYear << "\nDescription: " << issueDescription << "\n\n";
 	}
 	else
 	{
