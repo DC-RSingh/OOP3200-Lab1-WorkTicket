@@ -89,14 +89,22 @@ public:
 	 */
 	string GetClientId() const;
 
-	/** GetDate method
+	/** GetDay method
 	 *
-	 * @return the date the ticket was issued
+	 * @return the value stored in the workTicketDay attribute
 	 */
 	int GetDay() const;
 
+	/** GetMonth method
+	 *
+	 * @return the value stored in the workTicketMonth attribute
+	 */
 	int GetMonth() const;
 
+	/** GetYear method
+	 *
+	 * @return the value stored in the workTicketYear attribute
+	 */
 	int GetYear() const;
 
 	/** GetDesc method
