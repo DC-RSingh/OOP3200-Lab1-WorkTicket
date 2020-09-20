@@ -139,12 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ConsoleInput.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="WorkTicket.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ConsoleInput.h" />
     <ClInclude Include="WorkTicket.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
