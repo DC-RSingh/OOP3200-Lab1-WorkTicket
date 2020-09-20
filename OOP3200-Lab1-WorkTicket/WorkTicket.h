@@ -8,15 +8,15 @@ using namespace std;
 class WorkTicket
 {
 public:
-	WorkTicket();
-	WorkTicket(int ticketNumber, string id , int day, int month, int year, string desc);
+	// Parameterized constructor
+	WorkTicket(int ticketNumber = 0, string id = "", int day = 1, int month = 1, int year = 2000, string desc = "");
 
 	// Mutators
 	void SetTicketNumber(int ticketNumber);
 	void SetClientId(string id);
 	void SetDate(int day, int month, int year);
 	void SetDesc(string desc);
-	void SetWorkTicket(int ); // not done
+	void SetWorkTicket(int ticketNumber, string id, int day, int month, int year, string desc);
 
 	// Accessors
 	int GetTicketNumber();
@@ -32,6 +32,8 @@ private:
 	int workTicketMonth;
 	int workTicketYear;
 	string issueDescription;
+
+	bool isValid = true;
 };
 
 #endif
