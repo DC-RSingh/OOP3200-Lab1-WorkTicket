@@ -1,8 +1,5 @@
 /** WorkTicket.h
  *
- *	This program includes a WorkTicket class that:
- *		-
- *
  *	@authors	Raje Singh & Angus Wai
  *	@studentIDs 100776793 & 100719558
  *	@date		September 19, 2020
@@ -18,22 +15,100 @@ using namespace std;
 class WorkTicket
 {
 public:
-	// Parameterized constructor
+
+	/** WorkTicket constructor:
+	 * Initializes the objects of the WorkTicket class. Acts as a default constructor when no params are passed.
+	 * Initializes all attributes of a WorkTicket object when params are passed.
+	 *
+	 * @param ticketNumber	the ticket number of the work ticket; defaults to 1; must be a whole, positive number.
+	 * @param id	the id of the client issuing the work ticket; defaults to an empty string.
+	 * @param day	the day the ticket was issued; defaults to 1.
+	 * @param month	the month the ticket was issued; defaults to 1.
+	 * @param year	the year the ticket was issued; defaults to 2000.
+	 * @param desc	the description of the issue the client is having; defaults to an empty string.
+	 */
 	WorkTicket(int ticketNumber = 1, string id = "", int day = 1, int month = 1, int year = 2000, string desc = "");
 
 	// Mutators
+	
+	/** SetTicketNumber method:
+	 * Sets the value of the workTicketNumber attribute.
+	 * 
+	 * @param ticketNumber	the ticket number of the work ticket; must be a whole, positive number.
+	 */
 	void SetTicketNumber(int ticketNumber);
+
+	/** SetClientId method:
+	 * Sets the value of the clientId attribute.
+	 *
+	 * @param id the id of the client issuing the work ticket.
+	 */
 	void SetClientId(string id);
+
+	/** SetDate method:
+	 *  Sets the workTicketDay, workTicketMonth and workTicketYear attributes.
+	 *
+	 *  @param day the day the ticket was issued.
+	 *  @param month the month the ticket was issued.
+	 *  @param year the year the ticket was issued.
+	 */
 	void SetDate(int day, int month, int year);
+
+	/** SetDesc method:
+	 *  Sets the issueDescription attribute.
+	 *
+	 *  @param desc the description of the issue the client is having.
+	 */
 	void SetDesc(string desc);
+
+	/** SetWorkTicket method:
+	 * Sets all attributes of the object.
+	 * 
+	 * @param ticketNumber	the ticket number of the work ticket.
+	 * @param id	the id of the client issuing the work ticket.
+	 * @param day	the day the ticket was issued.
+	 * @param month	the month the ticket was issued.
+	 * @param year	the year the ticket was issued.
+	 * @param desc	the description of the issue the client is having.
+	 */
 	void SetWorkTicket(int ticketNumber, string id, int day, int month, int year, string desc);
 
 	// Accessors
+
+	/** GetTicketNumber method
+	 *
+	 * @return the value stored in the workTicketNumber attribute.
+	 */
 	int GetTicketNumber();
+
+	/** GetClientId method
+	 *
+	 * @return the value stored in the clientId attribute.
+	 */
 	string GetClientId();
+
+	/** GetDate method
+	 *
+	 * @return the date the ticket was issued
+	 */
 	int GetDate();
+
+	/** GetDesc method
+	 *
+	 * @return the value stored in the issueDescription attribute.
+	 */
 	string GetDesc();
+
+	/** ShowWorkTicket method
+	 *
+	 * @return a string containing the details of the work ticket.
+	 */
 	string ShowWorkTicket();
+
+	/** isValid method
+	 *
+	 * @return a boolean representing whether the ticket is valid or not.
+	 */
 	bool IsValid();
 	
 private:

@@ -1,8 +1,5 @@
 /** WorkTicket.cpp
  *
- *	This program includes a WorkTicket class that:
- *		-
- *
  *	@authors	Raje Singh & Angus Wai
  *	@studentIDs 100776793 & 100719558
  *	@date		September 19, 2020
@@ -16,6 +13,7 @@ WorkTicket::WorkTicket(int ticketNumber, string id, int day, int month, int year
 	SetWorkTicket(ticketNumber, id, day, month, year, desc);
 }
 
+// SetTicketNumber method definition
 void WorkTicket::SetTicketNumber(int ticketNumber)
 {
 	try
@@ -37,11 +35,14 @@ void WorkTicket::SetTicketNumber(int ticketNumber)
 	}
 }
 
+// The client ID should be at least 1 character long
+// SetClientId method definition
 void WorkTicket::SetClientId(string id)
 {
 	clientId = id;
 }
 
+// SetDate method definition
 void WorkTicket::SetDate(int day, int month, int year)
 {
 	try
@@ -98,11 +99,15 @@ void WorkTicket::SetDate(int day, int month, int year)
 	}
 }
 
+// The description should be at least 1 character long
+// SetDesc method definition
 void WorkTicket::SetDesc(string desc)
 {
 	issueDescription = desc;
 }
 
+// This should actually return a bool
+// SetWorkTicket method definition
 void WorkTicket::SetWorkTicket(int ticketNumber, string id, int day, int month, int year, string desc)
 {
 	isValid = true;
@@ -112,26 +117,31 @@ void WorkTicket::SetWorkTicket(int ticketNumber, string id, int day, int month, 
 	SetDesc(desc);
 }
 
+// GetTicketNumber method definition
 int WorkTicket::GetTicketNumber()
 {
 	return workTicketNumber;
 }
 
+// GetClientId method definition
 string WorkTicket::GetClientId()
 {
 	return clientId;
 }
 
+// GetDate method definition
 int WorkTicket::GetDate() // NOT DONE!!!!!!!!
 {
 	return 0;
 }
 
+// GetDesc method definition
 string WorkTicket::GetDesc()
 {
 	return issueDescription;
 }
 
+// ShowWorkTicket method definition
 string WorkTicket::ShowWorkTicket()
 {
 	stringstream strOut;
@@ -149,6 +159,7 @@ string WorkTicket::ShowWorkTicket()
 	return strOut.str();
 }
 
+// isValid method definition
 bool WorkTicket::IsValid()
 {
 	return isValid;
