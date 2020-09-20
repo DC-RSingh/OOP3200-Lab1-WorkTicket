@@ -35,7 +35,6 @@ void WorkTicket::SetTicketNumber(int ticketNumber)
 	}
 }
 
-// The client ID should be at least 1 character long
 // SetClientId method definition
 void WorkTicket::SetClientId(string id)
 {
@@ -113,13 +112,12 @@ void WorkTicket::SetDate(int day, int month, int year)
 	}
 }
 
-// The description should be at least 1 character long
 // SetDesc method definition
 void WorkTicket::SetDesc(string desc)
 {
 	try
 	{
-		if (desc != "")
+		if (!desc.empty())
 			issueDescription = desc;
 		else
 		{
@@ -134,7 +132,6 @@ void WorkTicket::SetDesc(string desc)
 	}
 }
 
-// This should actually return a bool
 // SetWorkTicket method definition
 bool WorkTicket::SetWorkTicket(int ticketNumber, string id, int day, int month, int year, string desc)
 {
@@ -148,38 +145,51 @@ bool WorkTicket::SetWorkTicket(int ticketNumber, string id, int day, int month, 
 }
 
 // GetTicketNumber method definition
-int WorkTicket::GetTicketNumber()
+int WorkTicket::GetTicketNumber() const
 {
 	return workTicketNumber;
 }
 
 // GetClientId method definition
-string WorkTicket::GetClientId()
+string WorkTicket::GetClientId() const
 {
 	return clientId;
 }
 
-// GetDate method definition
-int WorkTicket::GetDate() // NOT DONE!!!!!!!!
+// GetDay method definition
+int WorkTicket::GetDay() const
 {
-	return 0;
+	return workTicketDay;
 }
 
+// GetMonth method definition
+int WorkTicket::GetMonth() const
+{
+	return workTicketMonth;
+}
+
+// GetYear method definition
+int WorkTicket::GetYear() const
+{
+	return workTicketYear;
+}
+
+
 // GetDesc method definition
-string WorkTicket::GetDesc()
+string WorkTicket::GetDesc() const
 {
 	return issueDescription;
 }
 
 // ShowWorkTicket method definition
-string WorkTicket::ShowWorkTicket()
+string WorkTicket::ShowWorkTicket() const
 {
 	stringstream strOut;
 
 	if (isValid)
 	{
-		strOut << "\n\nWork Ticket Number: " << workTicketNumber << "\nClient ID: " << clientId << "\nDate: " << workTicketDay
-			<< "/" << workTicketMonth << "/" << workTicketYear << "\nDescription: " << issueDescription << "\n\n";
+		strOut << "\n\nWork Ticket Number: " << GetTicketNumber() << "\nClient ID: " << GetClientId() << "\nDate: " << GetDay()
+			<< "/" << GetMonth() << "/" << GetYear() << "\nDescription: " << GetDesc() << "\n\n";
 	}
 	
 	return strOut.str();

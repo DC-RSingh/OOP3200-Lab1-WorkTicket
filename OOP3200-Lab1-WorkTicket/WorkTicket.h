@@ -81,31 +81,35 @@ public:
 	 *
 	 * @return the value stored in the workTicketNumber attribute.
 	 */
-	int GetTicketNumber();
+	int GetTicketNumber() const;
 
 	/** GetClientId method
 	 *
 	 * @return the value stored in the clientId attribute.
 	 */
-	string GetClientId();
+	string GetClientId() const;
 
 	/** GetDate method
 	 *
 	 * @return the date the ticket was issued
 	 */
-	int GetDate();
+	int GetDay() const;
+
+	int GetMonth() const;
+
+	int GetYear() const;
 
 	/** GetDesc method
 	 *
 	 * @return the value stored in the issueDescription attribute.
 	 */
-	string GetDesc();
+	string GetDesc() const;
 
 	/** ShowWorkTicket method
 	 *
 	 * @return a string containing the details of the work ticket.
 	 */
-	string ShowWorkTicket();
+	string ShowWorkTicket() const;
 	
 private:
 	int workTicketNumber;
