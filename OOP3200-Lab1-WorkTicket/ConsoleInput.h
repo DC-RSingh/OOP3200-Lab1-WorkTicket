@@ -3,6 +3,7 @@
  * This file was not made by either author of the WorkTicket or main.cpp files. The ConsoleInput class
  * was provided to us by our OOP3200 professor at Durham College.
  */
+
 #ifndef CONSOLE_INPUT_H
 #define CONSOLE_INPUT_H
 
